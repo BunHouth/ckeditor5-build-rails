@@ -165,6 +165,17 @@
     "@ckeditor/ckeditor5-utils" "^19.0.0"
     lodash-es "^4.17.10"
 
+"@ckeditor/ckeditor5-editor-inline@^19.0.0":
+  version "19.0.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-editor-inline/-/ckeditor5-editor-inline-19.0.0.tgz#4134b615528a2caf490b6123f5dce61b65a00693"
+  integrity sha512-mME6TRUiKXFSMdHNOHjsPWvoa6fhrV/rtHmwAnNv5nJxm56dCza6S7tTuDrJxS2Q1Psgnw8fboxn2jbPzeuIVw==
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^19.0.0"
+    "@ckeditor/ckeditor5-engine" "^19.0.0"
+    "@ckeditor/ckeditor5-ui" "^19.0.0"
+    "@ckeditor/ckeditor5-utils" "^19.0.0"
+    lodash-es "^4.17.10"
+
 "@ckeditor/ckeditor5-engine@^19.0.0":
   version "19.0.0"
   resolved "https://registry.npm.taobao.org/@ckeditor/ckeditor5-engine/download/@ckeditor/ckeditor5-engine-19.0.0.tgz#3246193c8d5a47496e888064250303085ecaad3c"

@@ -5,6 +5,7 @@
 
 // The editor creator to use.
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+import InlineEditorBase from '@ckeditor/ckeditor5-editor-inline/src/inlineeditor';
 
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
@@ -80,6 +81,7 @@ ClassicEditor.defaultConfig = {
 			'bold',
 			'italic',
 			'strikethrough',
+			'fontFamily',
 			'fontColor',
 			'|',
 			'link',
@@ -94,6 +96,9 @@ ClassicEditor.defaultConfig = {
 			'blockQuote',
 			'|',
 			'insertTable',
+			'|',
+			'undo',
+			'redo',
 			'|',
 			'removeFormat',
 			''
@@ -132,6 +137,22 @@ ClassicEditor.defaultConfig = {
 		headers: {
 			'X-CSRF-TOKEN': csrfToken,
 		}
+	},
+	fontFamily: {
+		options: [
+			'default',
+			'Ubuntu, Arial, sans-serif',
+			'Ubuntu Mono, Courier New, Courier, monospace',
+			'NotoSansCJKjp-Black',
+			'NotoSansCJKjp-Bold',
+			'NotoSansCJKjp-DemiLight',
+			'NotoSansCJKjp-Light',
+			'NotoSansCJKjp-Medium',
+			'NotoSansCJKjp-Regular',
+			'NotoSansCJKjp-Thin',
+			'NotoSansMonoCJKjp-Bold',
+			'NotoSansMonoCJKjp-Regular'
+		]
 	},
 	fontColor: {
 		colors: [
@@ -201,3 +222,122 @@ ClassicEditor.defaultConfig = {
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'ja'
 };
+
+
+export class InlineEditor extends InlineEditorBase {}
+
+// Plugins to include in the build.
+InlineEditor.builtinPlugins = [
+	Essentials,
+	Autoformat,
+	Bold,
+	Italic,
+	BlockQuote,
+	Heading,
+	Indent,
+	Link,
+	Paragraph,
+	Font,
+];
+
+// Editor configuration.
+InlineEditor.defaultConfig = {
+	toolbar: {
+		items: [
+			'heading',
+			'|',
+			'bold',
+			'italic',
+			'link',
+			'fontFamily',
+			'fontColor',
+			'|',
+			'undo',
+			'redo'
+		],
+		fontFamily: {
+			options: [
+				'default',
+				'Ubuntu, Arial, sans-serif',
+				'Ubuntu Mono, Courier New, Courier, monospace',
+				'NotoSansCJKjp-Black',
+				'NotoSansCJKjp-Bold',
+				'NotoSansCJKjp-DemiLight',
+				'NotoSansCJKjp-Light',
+				'NotoSansCJKjp-Medium',
+				'NotoSansCJKjp-Regular',
+				'NotoSansCJKjp-Thin',
+				'NotoSansMonoCJKjp-Bold',
+				'NotoSansMonoCJKjp-Regular'
+			]
+		},
+		fontColor: {
+			colors: [
+				{
+					color: '#000000',
+					label: 'Black'
+				},
+				{
+					color: '#424242',
+					label: 'Dim grey'
+				},
+				{
+					color: '#757575',
+					label: 'Grey'
+				},
+				{
+					color: '#BDBDBD',
+					label: 'Light grey'
+				},
+				{
+					color: '#fff',
+					label: 'White',
+					hasBorder: true
+				},
+				{
+					color: '#D50000',
+					label: 'Red'
+				},
+				{
+					color: '#E91E63',
+					label: 'Pink'
+				},
+				{
+					color: '#9C27B0',
+					label: 'Purple'
+				},
+				{
+					color: '#3F51B5',
+					label: 'Indigo'
+				},
+				{
+					color: '#2196F3',
+					label: 'Blue'
+				},
+				{
+					color: '#03A9F4',
+					label: 'Light blue'
+				},
+				{
+					color: '#018D00',
+					label: 'Green'
+				},
+				{
+					color: '#AEEA00',
+					label: 'Light green'
+				},
+				{
+					color: '#FFEB3B',
+					label: 'Yellow'
+				},
+				{
+					color: '#FF5722',
+					label: 'Orange'
+				}
+			]
+		}
+	},
+	language: 'ja'
+}
+
+global.InlineEditor = InlineEditor

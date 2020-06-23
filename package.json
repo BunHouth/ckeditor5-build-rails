@@ -78,5 +78,8 @@
   "eslintIgnore": [
     "build/**",
     "packages/**"
-  ]
+  ],
+  "dependencies": {
+    "@ckeditor/ckeditor5-editor-inline": "^19.0.0"
+  }
 }
