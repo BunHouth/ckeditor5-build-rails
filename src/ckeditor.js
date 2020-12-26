@@ -34,6 +34,9 @@ import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import AutoSave from '@ckeditor/ckeditor5-autosave/src/autosave';
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
+import HorizontalLineSmall from '../lib/ckeditor5-horizontal-line-small/src/horizontallinesmall';
+import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak';
 
 export default class ClassicEditor extends ClassicEditorBase { }
 
@@ -65,7 +68,10 @@ ClassicEditor.builtinPlugins = [
 	Indent,
 	IndentBlock,
 	AutoSave,
-	Alignment
+	Alignment,
+	HorizontalLine,
+	HorizontalLineSmall,
+	PageBreak
 ];
 
 // eslint-disable-next-line no-undef
@@ -80,9 +86,9 @@ ClassicEditor.defaultConfig = {
 			'|',
 			'bold',
 			'italic',
-			'strikethrough',
 			'fontFamily',
 			'fontColor',
+			'fontSize',
 			'|',
 			'link',
 			'imageUpload',
@@ -90,6 +96,8 @@ ClassicEditor.defaultConfig = {
 			'outdent',
 			'indent',
 			'alignment',
+			'horizontalLine',
+			'horizontalLineSmall',
 			'|',
 			'bulletedList',
 			'numberedList',
@@ -101,12 +109,13 @@ ClassicEditor.defaultConfig = {
 			'redo',
 			'|',
 			'removeFormat',
-			''
+			'pageBreak',
 		]
 	},
 	heading: {
 		options: [
 			{ model: 'paragraph', title: 'Paragraph' },
+			{ model: 'heading1', view: 'h1', title: 'Heading 1' },
 			{ model: 'heading2', view: 'h2', title: 'Heading 2' },
 			{ model: 'heading3', view: 'h3', title: 'Heading 3' },
 			{ model: 'heading4', view: 'h4', title: 'Heading 4' },

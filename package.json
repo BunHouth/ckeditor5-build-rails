@@ -30,11 +30,13 @@
     "@ckeditor/ckeditor5-essentials": "^19.0.0",
     "@ckeditor/ckeditor5-font": "^19.0.0",
     "@ckeditor/ckeditor5-heading": "^19.0.0",
+    "@ckeditor/ckeditor5-horizontal-line": "19.0.0",
     "@ckeditor/ckeditor5-image": "^19.0.0",
     "@ckeditor/ckeditor5-indent": "^19.0.0",
     "@ckeditor/ckeditor5-link": "^19.0.0",
     "@ckeditor/ckeditor5-list": "^19.0.0",
     "@ckeditor/ckeditor5-media-embed": "^19.0.0",
+    "@ckeditor/ckeditor5-page-break": "19.0.0",
     "@ckeditor/ckeditor5-paragraph": "^19.0.0",
     "@ckeditor/ckeditor5-paste-from-office": "^19.0.0",
     "@ckeditor/ckeditor5-remove-format": "^19.0.0",
@@ -68,7 +70,8 @@
     "build": "webpack --mode production",
     "release": "webpack --mode production && yarn publish",
     "lint": "eslint --quiet '**/*.js'",
-    "preversion": "npm run build; if [ -n \"$(git status src/ckeditor.js build/ --porcelain)\" ]; then git add -u src/ckeditor.js build/ && git commit -m 'Internal: Build.'; fi"
+    "preversion": "npm run build; if [ -n \"$(git status src/ckeditor.js build/ --porcelain)\" ]; then git add -u src/ckeditor.js build/ && git commit -m 'Internal: Build.'; fi",
+    "postinstall": "patch-package"
   },
   "lint-staged": {
     "**/*.js": [
@@ -80,6 +83,7 @@
     "packages/**"
   ],
   "dependencies": {
-    "@ckeditor/ckeditor5-editor-inline": "^19.0.0"
+    "@ckeditor/ckeditor5-editor-inline": "^19.0.0",
+    "patch-package": "^6.2.2"
   }
 }

@@ -1,0 +1,13 @@
+diff --git a/node_modules/@ckeditor/ckeditor5-horizontal-line/theme/horizontalline.css b/node_modules/@ckeditor/ckeditor5-horizontal-line/theme/horizontalline.css
+index 04b21df..49da4f7 100755
+--- a/node_modules/@ckeditor/ckeditor5-horizontal-line/theme/horizontalline.css
++++ b/node_modules/@ckeditor/ckeditor5-horizontal-line/theme/horizontalline.css
+@@ -10,7 +10,7 @@
+ }
+ 
+ .ck-content hr {
+-	border-width: 1px 0 0;
++	border-width: 2px 0 0;
+ 	border-style: solid;
+ 	border-color: hsl(0, 0%, 37%);
+ 	margin: 0;
